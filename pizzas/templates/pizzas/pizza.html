@@ -2,6 +2,10 @@
 
 {% block content %}
 
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'mysecond.css' %}">
+
 <p> Pizza: {{ pizza }} </p>
 
 <ul>
@@ -13,11 +17,12 @@
     
 </ul>
 
-
+<p> Comments: </p>
 <ul>
     {% for c in new_comments %}
 
-        <p>{{ c.text }}</p>
+        <li>{{ c.text }}</li>
+        <p> -{{ c.date_added }} </p>
 
     {%empty%}
 

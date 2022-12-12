@@ -2,6 +2,10 @@
 
 {% block content %}
 
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'mysecond.css' %}">
+
 <p> Pizzas </p>
 
 <ul>
@@ -14,5 +18,7 @@
     {% endfor %}
 
 </ul>
+
+<img src="{% static 'chef.jpg' %}">
 
 {% endblock content%}

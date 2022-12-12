@@ -2,8 +2,26 @@
 
 {% block content %}
 
-<p>Wright Pizza</p>
+{% load static %}
 
-<p> At Wright Pizza, we have all the delicous pizza you could ever want! </p>
+<link rel="stylesheet" href="{% static 'myfirst.css' %}">
+
+<p>Wright Pizza: We got all the pizza</p>
+
+<p> ------------------------------------- </p>
+
+<p> Click the Pizza tab at the top of your screen to see our wonderful
+    selections of artisan pizzas.
+ </p>
+
+ <p> --------------------------------------------------- </p>
+
+ <p>
+    Wright Pizza started in 2022 when the founder,
+    Kyle Wright, had a vision to bring wonderful pizzas 
+    to the people through a Django website.
+ </p>
+
+ <img src="{% static 'home.jpg' %}">
 
 {% endblock content%}

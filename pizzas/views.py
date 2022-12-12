@@ -18,7 +18,7 @@ def pizza(request, pizza_id):
 
     toppings = Topping.objects.filter(pizza=p)
 
-    new_comments = p.comment_set.all()
+    new_comments = Comment.objects.filter(pizza=pizza_id)
 
     context = {'pizza':p, 'toppings': toppings, 'new_comments': new_comments}
 
