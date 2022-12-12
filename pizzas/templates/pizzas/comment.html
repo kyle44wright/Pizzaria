@@ -2,6 +2,10 @@
 
 {% block content %}
 
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'mysecond.css' %}">
+
 <p>Write your comment:</p>
 
 <form action="{% url 'pizzas:comment' pizza.id %}" method="post">

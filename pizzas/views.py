@@ -15,12 +15,11 @@ def pizzas(request):
 
 def pizza(request, pizza_id):
     p = Pizza.objects.get(id=pizza_id)
-
     toppings = Topping.objects.filter(pizza=p)
+    new_comments = Comment.objects.filter(pizza=pizza_id).order_by('-date_added')
+    image = Image.objects.filter(pizza=pizza_id)
 
-    new_comments = Comment.objects.filter(pizza=pizza_id)
-
-    context = {'pizza':p, 'toppings': toppings, 'new_comments': new_comments}
+    context = {'pizza':p, 'toppings': toppings, 'new_comments': new_comments, 'image': image}
 
     return render(request, 'pizzas/pizza.html', context)
 
@@ -40,4 +39,6 @@ def comment(request, pizza_id):
     context = {'form':form, 'pizza':pizza}
 
     return render(request, 'pizzas/comment.html', context)
+
+
 

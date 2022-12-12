@@ -17,6 +17,15 @@
     
 </ul>
 
+    {% for i in image %}
+    <div class="col-md-4">
+            <img src="{{  i.image.url  }}" class="img-responsive" style="width: 50%; margin-right: 10px;" />
+    </div>
+    {% empty %}
+    <p> There isn't an image for this pizza yet </p>
+    {% endfor %}   
+
+
 <p> Comments: </p>
 <ul>
     {% for c in new_comments %}
